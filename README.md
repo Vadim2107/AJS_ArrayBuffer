@@ -1,1 +1,2 @@
-# AJS_ArrayBuffer
+
+# Домашнее задание к лекции «ArrayBuffer»
