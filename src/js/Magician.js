@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 class Magician extends Character {
   constructor(name) {
     super(name);

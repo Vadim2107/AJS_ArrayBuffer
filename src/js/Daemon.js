@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 class Daemon extends Character {
   constructor(name) {
     super(name);
