@@ -13,29 +13,30 @@ export default class Character {
     this.distanceMod = 1;
     this.stoned = false;
     this.stonedMod = 0;
+    // this.attack = 0;
 
-    if (typeof (this.name) !== 'string' || this.name.length < 2 || this.name.length > 10) {
-      throw new Error('Введены не корректные данные!');
-    }
+    // if (typeof (this.name) !== 'string' || this.name.length < 2 || this.name.length > 10) {
+    //   throw new Error('Введены не корректные данные!');
+    // }
   }
 
-  levelUp() {
-    this.level++;
-    this.health = 100;
-    this.attack += this.attack / 100 * 20;
-    this.defence += this.defence / 100 * 20;
-  }
+  // levelUp() {
+  //   this.level++;
+  //   this.health = 100;
+  //   this.attack += this.attack / 100 * 20;
+  //   this.defence += this.defence / 100 * 20;
+  // }
 
-  damage(points) {
-    if (this.health >= 0) {
-      this.health -= points * (1 - this.defence / 100);
-    } else {
-      alert('Нельзя повысить левел умершего!');
-    }
-  }
+  // damage(points) {
+  //   if (this.health >= 0) {
+  //     this.health -= points * (1 - this.defence / 100);
+  //   } else {
+  //     alert('Нельзя повысить левел умершего!');
+  //   }
+  // }
 
   set stoned(value) {
-    if (typeof value !== 'boolean') return;
+    // if (typeof value !== 'boolean') return;
     this._stoned = value;
     this.setMod();
   }
@@ -45,12 +46,12 @@ export default class Character {
   }
 
   set distance(value) {
-    // this._distance = (value > 0) ? value : 1;
-    if (value > 0) {
-      this._distance = value;
-    } else {
-      this._distance = 1;
-    }
+    this._distance = (value > 0) ? value : 1;
+    // if (value > 0) {
+    //   this._distance = value;
+    // } else {
+    //   this._distance = 1;
+    // }
     this.setMod();
   }
 
@@ -74,11 +75,12 @@ export default class Character {
 
   get attack() {
     const attack = this._attack * this.distanceMod - this.stonedMod;
+    return attack;
     // return (attack > 0) ? Math.ceil(attack) : 0;
-    if (attack > 0) {
-      return Math.ceil(attack);
-    } else {
-      return 0;
-    }
+    // if (attack > 0) {
+    //   return Math.ceil(attack);
+    // } else {
+    //   return 0;
+    // }
   }
 }
